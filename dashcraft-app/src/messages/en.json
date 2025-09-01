@@ -18,6 +18,8 @@
 		"apis": "APIs",
 		"monitoring": "Monitoring",
 		"languages": "Languages",
+		"profile": "Profile",
+		"team": "Team",
 		"settings": "Settings"
 	},
 	"widgets": {
@@ -163,7 +165,25 @@
 		"settings": {
 			"title": "Settings",
 			"optionA": "Option A",
-			"optionB": "Option B"
+			"optionB": "Option B",
+			"theme": {
+				"title": "Theme",
+				"modeLabel": "Mode",
+				"system": "System",
+				"dark": "Dark",
+				"light": "Light"
+			},
+			"sidebar": {
+				"title": "Sidebar",
+				"openLabel": "Show sidebar"
+			},
+			"modules": {
+				"title": "Modules",
+				"visibilityLabel": "Modules visibility",
+				"selectAll": "Show all",
+				"deselectAll": "Hide all",
+				"ariaLabel": "Modules list"
+			}
 		}
 	},
 	"pages": {
@@ -217,6 +237,9 @@
 				"created": "User created",
 				"updated": "User updated",
 				"deleted": "User deleted"
+			},
+			"errors": {
+				"nameRequired": "Name is required"
 			}
 		},
 		"generic": {
@@ -351,344 +374,355 @@
 				"edit": "Edit",
 				"delete": "Delete"
 			},
-        "status": {
-            "succeeded": "Succeeded",
-            "pending": "Pending",
-            "failed": "Failed",
-            "refunded": "Refunded"
-        },
-        "filter": {
-            "label": "Filter by status",
-            "all": "All",
-            "succeeded": "Succeeded",
-            "pending": "Pending",
-            "failed": "Failed",
-            "refunded": "Refunded"
-        },
-        "dateFilter": {
-            "from": "From date",
-            "to": "To date"
-        },
-        "loading": "Loading...",
-        "noResults": "No results",
-        "error": "Error",
-        "save": "Save",
-        "cancel": "Cancel",
-        "deleteConfirm": "Delete this payment?",
-        "previous": "Previous",
-        "next": "Next",
-        "page": "Page",
-        "of": "of",
-        "pageSize": "Size",
-        "exportCsv": "Export CSV",
-        "bulk": {
-            "label": "Bulk actions",
-            "selected": "{count} selected",
-            "selectAll": "Select all",
-            "selectRow": "Select row",
-            "deleteSelected": "Delete selected",
-            "deleteConfirm": "Delete selected payments?"
-        },
-        "sort": {
-            "label": "Sort",
-            "by": "Field",
-            "dir": "Order",
-            "byAmount": "Amount",
-            "byTime": "Date",
-            "asc": "Ascending",
-            "desc": "Descending"
-        },
-        "live": {
-            "created": "Payment created",
-            "updated": "Payment updated",
-            "deleted": "Payment deleted"
-        }
-    },
-    "feedbacks": {
-        "subtitle": "Manage your feedbacks",
-        "search": "Search",
-        "searchPlaceholder": "Search a feedback...",
-        "form": "Create a feedback",
-        "addFeedback": "Add",
-        "fields": {
-            "author": "Author",
-            "comment": "Comment",
-            "rating": "Rating",
-            "status": "Status",
-            "time": "Time",
-            "actions": "Actions",
-            "edit": "Edit",
-            "delete": "Delete",
-            "select": "Select"
-        },
-        "status": {
-            "new": "New",
-            "in_progress": "In progress",
-            "resolved": "Resolved"
-        },
-        "filter": {
-            "label": "Filter by status",
-            "all": "All",
-            "new": "New",
-            "in_progress": "In progress",
-            "resolved": "Resolved"
-        },
-        "dateFilter": {
-            "from": "From date",
-            "to": "To date"
-        },
-        "bulk": {
-            "label": "Bulk actions",
-            "selected": "{count} selected",
-            "markNew": "Mark as new",
-            "markInProgress": "Mark in progress",
-            "markResolved": "Mark resolved",
-            "deleteSelected": "Delete selected",
-            "deleteConfirm": "Delete selected feedbacks?",
-            "selectAll": "Select all",
-            "selectRow": "Select row"
-        },
-        "loading": "Loading...",
-        "noResults": "No results",
-        "error": "Error",
-        "save": "Save",
-        "cancel": "Cancel",
-        "deleteConfirm": "Delete this feedback?",
-        "previous": "Previous",
-        "next": "Next",
-        "page": "Page",
-        "of": "of",
-        "pageSize": "Size",
-        "live": {
-            "created": "Feedback created",
-            "updated": "Feedback updated",
-            "deleted": "Feedback deleted"
-        }
-    },
-    "subscriptions": {
-        "subtitle": "Manage your subscriptions",
-        "search": "Search",
-        "searchPlaceholder": "Search a subscription...",
-        "fields": {
-            "customer": "Customer",
-            "plan": "Plan",
-            "price": "Price",
-            "currency": "Currency",
-            "status": "Status",
-            "start": "Start",
-            "end": "End"
-        },
-        "status": {
-            "active": "Active",
-            "canceled": "Canceled"
-        },
-        "filter": {
-            "label": "Filter by status",
-            "all": "All",
-            "active": "Active",
-            "canceled": "Canceled"
-        },
-        "dateFilter": {
-            "from": "From date",
-            "to": "To date"
-        },
-        "sort": {
-            "label": "Sort",
-            "by": "Field",
-            "dir": "Order",
-            "byPrice": "Price",
-            "byStart": "Start date",
-            "asc": "Ascending",
-            "desc": "Descending"
-        },
-        "loading": "Loading...",
-        "noResults": "No results",
-        "error": "Error",
-        "previous": "Previous",
-        "next": "Next",
-        "page": "Page",
-        "of": "of",
-        "pageSize": "Size"
-    },
-    "chats": {
-        "subtitle": "Manage your chats",
-        "search": "Search",
-        "searchPlaceholder": "Search a thread...",
-        "form": "Create a thread",
-        "addThread": "Add",
-        "viewMessages": "View messages",
-        "fields": {
-            "title": "Title",
-            "participants": "Participants",
-            "status": "Status",
-            "actions": "Actions",
-            "edit": "Edit",
-            "delete": "Delete"
-        },
-        "status": {
-            "open": "Open",
-            "archived": "Archived"
-        },
-        "filter": {
-            "label": "Filter by status",
-            "all": "All",
-            "open": "Open",
-            "archived": "Archived"
-        },
-        "loading": "Loading...",
-        "noResults": "No results",
-        "error": "Error",
-        "save": "Save",
-        "cancel": "Cancel",
-        "deleteConfirm": "Delete this thread?",
-        "previous": "Previous",
-        "next": "Next",
-        "page": "Page",
-        "of": "of",
-        "pageSize": "Size",
-        "messages": {
-            "title": "Messages",
-            "panelTitle": "Messages for {title}",
-            "limit": "Limit",
-            "selectThreadHint": "Select a thread to view its messages.",
-            "loading": "Loading messages...",
-            "empty": "No messages"
-        },
-        "live": {
-            "created": "Thread created",
-            "updated": "Thread updated",
-            "deleted": "Thread deleted",
-            "messagesLoaded": "Messages loaded: {count}"
-        }
-    },
-    "calendar": {
-        "subtitle": "Manage your calendar",
-        "loading": "Loading...",
-        "noResults": "No results",
-        "error": "Error",
-        "regionLabel": "Calendar content"
-    },
-    "analytics": {
-        "subtitle": "Track your traffic and conversions",
-        "regionLabel": "Analytics content"
-    },
-    "languages": {
-        "subtitle": "Manage interface language",
-        "regionLabel": "Languages content"
-    },
-    "monitoring": {
-        "subtitle": "Monitor system resources",
-        "regionLabel": "Monitoring content"
-    },
-    "apis": {
-        "subtitle": "Monitor external services",
-        "regionLabel": "APIs content",
-        "search": "Search",
-        "searchPlaceholder": "Search an API...",
-        "form": "Create an API",
-        "addApi": "Add",
-        "fields": {
-            "name": "Name",
-            "baseUrl": "Base URL",
-            "version": "Version",
-            "status": "Status",
-            "enabled": "Enabled",
-            "tags": "Tags",
-            "latencyMs": "Latency (ms)",
-            "uptimePct": "Uptime (%)",
-            "lastChecked": "Last check",
-            "actions": "Actions",
-            "edit": "Edit",
-            "delete": "Delete",
-            "select": "Select"
-        },
-        "status": {
-            "up": "Up",
-            "down": "Down"
-        },
-        "filter": {
-            "label": "Filter by status",
-            "all": "All",
-            "up": "Up",
-            "down": "Down"
-        },
-        "sort": {
-            "label": "Sort",
-            "by": "Field",
-            "dir": "Order",
-            "byLastChecked": "Last check",
-            "byName": "Name",
-            "byLatency": "Latency",
-            "asc": "Ascending",
-            "desc": "Descending"
-        },
-        "loading": "Loading...",
-        "noResults": "No results",
-        "error": "Error",
-        "save": "Save",
-        "cancel": "Cancel",
-        "deleteConfirm": "Delete this API?",
-        "previous": "Previous",
-        "next": "Next",
-        "page": "Page",
-        "of": "of",
-        "pageSize": "Size",
-        "live": {
-            "created": "API created",
-            "updated": "API updated",
-            "deleted": "API deleted"
-        },
-        "keys": {
-            "title": "API keys",
-            "form": "Create a key",
-            "addKey": "Add",
-            "fields": {
-                "api": "API",
-                "label": "Label",
-                "key": "Key",
-                "status": "Status",
-                "scopes": "Scopes",
-                "scopesPlaceholder": "Ex : read, write",
-                "createdAt": "Created",
-                "lastUsedAt": "Last used",
-                "actions": "Actions",
-                "rotate": "Rotate",
-                "copy": "Copy",
-                "copied": "Copied!",
-                "select": "Select"
-            },
-            "status": {
-                "active": "Active",
-                "revoked": "Revoked"
-            },
-            "filter": {
-                "label": "Filter by status",
-                "all": "All",
-                "active": "Active",
-                "revoked": "Revoked"
-            },
-            "sort": {
-                "label": "Sort",
-                "by": "Field",
-                "dir": "Order",
-                "byLabel": "Label",
-                "byCreatedAt": "Created",
-                "byLastUsedAt": "Last used",
-                "asc": "Ascending",
-                "desc": "Descending"
-            },
-            "loading": "Loading...",
-            "noResults": "No results",
-            "error": "Error",
-            "deleteConfirm": "Delete this key?",
-            "rotateConfirm": "Rotate this key?",
-            "live": {
-                "created": "Key created",
-                "updated": "Key updated",
-                "deleted": "Key deleted",
-                "rotated": "Key rotated"
-            }
-        }
-    }
-}
+			"status": {
+				"succeeded": "Succeeded",
+				"pending": "Pending",
+				"failed": "Failed",
+				"refunded": "Refunded"
+			},
+			"filter": {
+				"label": "Filter by status",
+				"all": "All",
+				"succeeded": "Succeeded",
+				"pending": "Pending",
+				"failed": "Failed",
+				"refunded": "Refunded"
+			},
+			"dateFilter": {
+				"from": "From date",
+				"to": "To date"
+			},
+			"loading": "Loading...",
+			"noResults": "No results",
+			"error": "Error",
+			"save": "Save",
+			"cancel": "Cancel",
+			"deleteConfirm": "Delete this payment?",
+			"previous": "Previous",
+			"next": "Next",
+			"page": "Page",
+			"of": "of",
+			"pageSize": "Size",
+			"exportCsv": "Export CSV",
+			"bulk": {
+				"label": "Bulk actions",
+				"selected": "{count} selected",
+				"selectAll": "Select all",
+				"selectRow": "Select row",
+				"deleteSelected": "Delete selected",
+				"deleteConfirm": "Delete selected payments?"
+			},
+			"sort": {
+				"label": "Sort",
+				"by": "Field",
+				"dir": "Order",
+				"byAmount": "Amount",
+				"byTime": "Date",
+				"asc": "Ascending",
+				"desc": "Descending"
+			},
+			"live": {
+				"created": "Payment created",
+				"updated": "Payment updated",
+				"deleted": "Payment deleted"
+			}
+		},
+		"feedbacks": {
+			"subtitle": "Manage your feedbacks",
+			"search": "Search",
+			"searchPlaceholder": "Search a feedback...",
+			"form": "Create a feedback",
+			"addFeedback": "Add",
+			"fields": {
+				"author": "Author",
+				"comment": "Comment",
+				"rating": "Rating",
+				"status": "Status",
+				"time": "Time",
+				"actions": "Actions",
+				"edit": "Edit",
+				"delete": "Delete",
+				"select": "Select"
+			},
+			"status": {
+				"new": "New",
+				"in_progress": "In progress",
+				"resolved": "Resolved"
+			},
+			"filter": {
+				"label": "Filter by status",
+				"all": "All",
+				"new": "New",
+				"in_progress": "In progress",
+				"resolved": "Resolved"
+			},
+			"dateFilter": {
+				"from": "From date",
+				"to": "To date"
+			},
+			"bulk": {
+				"label": "Bulk actions",
+				"selected": "{count} selected",
+				"markNew": "Mark as new",
+				"markInProgress": "Mark in progress",
+				"markResolved": "Mark resolved",
+				"deleteSelected": "Delete selected",
+				"deleteConfirm": "Delete selected feedbacks?",
+				"selectAll": "Select all",
+				"selectRow": "Select row"
+			},
+			"loading": "Loading...",
+			"noResults": "No results",
+			"error": "Error",
+			"save": "Save",
+			"cancel": "Cancel",
+			"deleteConfirm": "Delete this feedback?",
+			"previous": "Previous",
+			"next": "Next",
+			"page": "Page",
+			"of": "of",
+			"pageSize": "Size",
+			"live": {
+				"created": "Feedback created",
+				"updated": "Feedback updated",
+				"deleted": "Feedback deleted"
+			}
+		},
+		"subscriptions": {
+			"subtitle": "Manage your subscriptions",
+			"search": "Search",
+			"searchPlaceholder": "Search a subscription...",
+			"fields": {
+				"customer": "Customer",
+				"plan": "Plan",
+				"price": "Price",
+				"currency": "Currency",
+				"status": "Status",
+				"start": "Start",
+				"end": "End"
+			},
+			"status": {
+				"active": "Active",
+				"canceled": "Canceled"
+			},
+			"filter": {
+				"label": "Filter by status",
+				"all": "All",
+				"active": "Active",
+				"canceled": "Canceled"
+			},
+			"dateFilter": {
+				"from": "From date",
+				"to": "To date"
+			},
+			"sort": {
+				"label": "Sort",
+				"by": "Field",
+				"dir": "Order",
+				"byPrice": "Price",
+				"byStart": "Start date",
+				"asc": "Ascending",
+				"desc": "Descending"
+			},
+			"loading": "Loading...",
+			"noResults": "No results",
+			"error": "Error",
+			"previous": "Previous",
+			"next": "Next",
+			"page": "Page",
+			"of": "of",
+			"pageSize": "Size"
+		},
+		"chats": {
+			"subtitle": "Manage your chats",
+			"search": "Search",
+			"searchPlaceholder": "Search a thread...",
+			"form": "Create a thread",
+			"addThread": "Add",
+			"viewMessages": "View messages",
+			"fields": {
+				"title": "Title",
+				"participants": "Participants",
+				"status": "Status",
+				"actions": "Actions",
+				"edit": "Edit",
+				"delete": "Delete"
+			},
+			"status": {
+				"open": "Open",
+				"archived": "Archived"
+			},
+			"filter": {
+				"label": "Filter by status",
+				"all": "All",
+				"open": "Open",
+				"archived": "Archived"
+			},
+			"loading": "Loading...",
+			"noResults": "No results",
+			"error": "Error",
+			"save": "Save",
+			"cancel": "Cancel",
+			"deleteConfirm": "Delete this thread?",
+			"previous": "Previous",
+			"next": "Next",
+			"page": "Page",
+			"of": "of",
+			"pageSize": "Size",
+			"messages": {
+				"title": "Messages",
+				"panelTitle": "Messages for {title}",
+				"limit": "Limit",
+				"selectThreadHint": "Select a thread to view its messages.",
+				"loading": "Loading messages...",
+				"empty": "No messages"
+			},
+			"live": {
+				"created": "Thread created",
+				"updated": "Thread updated",
+				"deleted": "Thread deleted",
+				"messagesLoaded": "Messages loaded: {count}"
+			}
+		},
+		"calendar": {
+			"subtitle": "Manage your calendar",
+			"loading": "Loading...",
+			"noResults": "No results",
+			"error": "Error",
+			"regionLabel": "Calendar content"
+		},
+		"analytics": {
+			"subtitle": "Track your traffic and conversions",
+			"regionLabel": "Analytics content"
+		},
+		"languages": {
+			"subtitle": "Manage interface language",
+			"regionLabel": "Languages content"
+		},
+		"monitoring": {
+			"subtitle": "Monitor system resources",
+			"regionLabel": "Monitoring content"
+		},
+		"apis": {
+			"subtitle": "Monitor external services",
+			"regionLabel": "APIs content",
+			"search": "Search",
+			"searchPlaceholder": "Search an API...",
+			"form": "Create an API",
+			"addApi": "Add",
+			"fields": {
+				"name": "Name",
+				"baseUrl": "Base URL",
+				"version": "Version",
+				"status": "Status",
+				"enabled": "Enabled",
+				"tags": "Tags",
+				"latencyMs": "Latency (ms)",
+				"uptimePct": "Uptime (%)",
+				"lastChecked": "Last check",
+				"actions": "Actions",
+				"edit": "Edit",
+				"delete": "Delete",
+				"select": "Select"
+			},
+			"status": {
+				"up": "Up",
+				"down": "Down"
+			},
+			"filter": {
+				"label": "Filter by status",
+				"all": "All",
+				"up": "Up",
+				"down": "Down"
+			},
+			"sort": {
+				"label": "Sort",
+				"by": "Field",
+				"dir": "Order",
+				"byLastChecked": "Last check",
+				"byName": "Name",
+				"byLatency": "Latency",
+				"asc": "Ascending",
+				"desc": "Descending"
+			},
+			"loading": "Loading...",
+			"noResults": "No results",
+			"error": "Error",
+			"save": "Save",
+			"cancel": "Cancel",
+			"deleteConfirm": "Delete this API?",
+			"previous": "Previous",
+			"next": "Next",
+			"page": "Page",
+			"of": "of",
+			"pageSize": "Size",
+			"live": {
+				"created": "API created",
+				"updated": "API updated",
+				"deleted": "API deleted"
+			},
+			"keys": {
+				"title": "API keys",
+				"form": "Create a key",
+				"addKey": "Add",
+				"fields": {
+					"api": "API",
+					"label": "Label",
+					"key": "Key",
+					"status": "Status",
+					"scopes": "Scopes",
+					"scopesPlaceholder": "Ex : read, write",
+					"createdAt": "Created",
+					"lastUsedAt": "Last used",
+					"actions": "Actions",
+					"rotate": "Rotate",
+					"copy": "Copy",
+					"copied": "Copied!",
+					"select": "Select"
+				},
+				"status": {
+					"active": "Active",
+					"revoked": "Revoked"
+				},
+				"filter": {
+					"label": "Filter by status",
+					"all": "All",
+					"active": "Active",
+					"revoked": "Revoked"
+				},
+				"sort": {
+					"label": "Sort",
+					"by": "Field",
+					"dir": "Order",
+					"byLabel": "Label",
+					"byCreatedAt": "Created",
+					"byLastUsedAt": "Last used",
+					"asc": "Ascending",
+					"desc": "Descending"
+				},
+				"loading": "Loading...",
+				"noResults": "No results",
+				"error": "Error",
+				"deleteConfirm": "Delete this key?",
+				"rotateConfirm": "Rotate this key?",
+				"live": {
+					"created": "Key created",
+					"updated": "Key updated",
+					"deleted": "Key deleted",
+					"rotated": "Key rotated"
+				}
+			}
+		},
+		"settings": {
+			"subtitle": "Configure your dashboard and account",
+			"regionLabel": "Settings content",
+			"tabs": {
+				"ariaLabel": "Settings sections",
+				"profile": "Profile",
+				"dashboard": "Dashboard",
+				"team": "Team",
+				"system": "System"
+			}
+		}
+	}
 }

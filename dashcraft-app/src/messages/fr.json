@@ -18,6 +18,8 @@
 		"apis": "APIs",
 		"monitoring": "Monitoring",
 		"languages": "Langues",
+		"profile": "Profil",
+		"team": "Équipe",
 		"settings": "Paramètres"
 	},
 	"widgets": {
@@ -163,7 +165,25 @@
 		"settings": {
 			"title": "Paramètres",
 			"optionA": "Option A",
-			"optionB": "Option B"
+			"optionB": "Option B",
+			"theme": {
+				"title": "Thème",
+				"modeLabel": "Mode",
+				"system": "Système",
+				"dark": "Sombre",
+				"light": "Clair"
+			},
+			"sidebar": {
+				"title": "Barre latérale",
+				"openLabel": "Afficher la barre latérale"
+			},
+			"modules": {
+				"title": "Modules",
+				"visibilityLabel": "Visibilité des modules",
+				"selectAll": "Tout afficher",
+				"deselectAll": "Tout masquer",
+				"ariaLabel": "Liste des modules"
+			}
 		}
 	},
 	"pages": {
@@ -217,6 +237,9 @@
 				"created": "Utilisateur créé",
 				"updated": "Utilisateur mis à jour",
 				"deleted": "Utilisateur supprimé"
+			},
+			"errors": {
+				"nameRequired": "Le nom est requis"
 			}
 		},
 		"generic": {
@@ -689,6 +712,17 @@
 		"monitoring": {
 			"subtitle": "Surveiller les ressources système",
 			"regionLabel": "Contenu de monitoring"
+		},
+		"settings": {
+			"subtitle": "Configurez votre tableau de bord et votre compte",
+			"regionLabel": "Contenu des paramètres",
+			"tabs": {
+				"ariaLabel": "Sections des paramètres",
+				"profile": "Profil",
+				"dashboard": "Tableau de bord",
+				"team": "Équipe",
+				"system": "Système"
+			}
 		}
 	}
 }
