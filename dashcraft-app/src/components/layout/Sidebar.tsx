@@ -7,6 +7,8 @@ import {cn} from '@/lib/utils'
 import type {DashboardConfig, DashboardModule} from '@/types/dashboard'
 import Link from 'next/link'
 import {usePathname} from 'next/navigation'
+import {useSelector} from 'react-redux'
+import type {RootState} from '@/store/store'
 
 /**
  * Sidebar
@@ -16,15 +18,18 @@ export function Sidebar() {
 	const t = useTranslations('nav')
 	const cfg = config as DashboardConfig
 	const pathname = usePathname()
+	const visibility = useSelector((s: RootState) => s.ui.moduleVisibility)
 	return (
 		<nav
 			role='navigation'
 			aria-label='Sidebar'
 			className='w-64 shrink-0 border-r border-white/10 p-4 hidden md:block'
+			data-testid='sidebar-nav'
 		>
 			<ul className='space-y-2'>
 				{cfg.modules
-					.filter((m: DashboardModule) => m.visible)
+					// Combine visibilité statique et préférences utilisateur
+					.filter((m: DashboardModule) => m.visible && visibility[m.key])
 					.sort((a: DashboardModule, b: DashboardModule) => a.order - b.order)
 					.map((m: DashboardModule) => (
 						<li key={m.key}>
@@ -48,3 +53,4 @@ export function Sidebar() {
 		</nav>
 	)
 }
+
