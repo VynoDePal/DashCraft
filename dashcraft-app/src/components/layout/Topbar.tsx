@@ -2,11 +2,13 @@
 
 import {useCallback, useTransition} from 'react'
 import {useLocale, useTranslations} from 'next-intl'
-import {useTheme} from 'next-themes'
 import {useRouter} from 'next/navigation'
+import {useDispatch, useSelector} from 'react-redux'
 import {setLocaleAction} from '@/app/actions/set-locale'
 import {getLocaleDisplayName, type LocaleCode} from '@/config/i18n'
 import {Icon} from '@/lib/icons'
+import {setThemeMode, type ThemeMode} from '@/store/store'
+import type {RootState} from '@/store/store'
 
 /**
  * Topbar
@@ -15,12 +17,16 @@ import {Icon} from '@/lib/icons'
 export function Topbar() {
 	const t = useTranslations('app')
 	const locale = useLocale()
-	const {resolvedTheme, setTheme} = useTheme()
 	const router = useRouter()
+	const dispatch = useDispatch()
+	const mode = useSelector((s: RootState) => s.ui.themeMode)
 	const [isPending, startTransition] = useTransition()
 
 	function handleToggleTheme() {
-		setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+		const order: ThemeMode[] = ['system', 'dark', 'light']
+		const idx = order.indexOf(mode)
+		const next = order[(idx + 1) % order.length]
+		dispatch(setThemeMode(next))
 	}
 
 	const handleSetLocale = useCallback(
