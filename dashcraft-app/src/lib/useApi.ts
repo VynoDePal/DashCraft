@@ -16,6 +16,7 @@ export interface UserEntity {
 	name: string
 	role: 'Admin' | 'Editor' | 'Viewer'
 	status: 'active' | 'inactive'
+	createdAt?: string
 }
 
 export interface NotificationEntity {
@@ -391,7 +392,10 @@ export function useApi() {
 			name: faker.person.fullName(),
 			role: faker.helpers.arrayElement(['Admin', 'Editor', 'Viewer']),
 			status: faker.datatype.boolean() ? 'active' : 'inactive',
+			createdAt: faker.date.recent({days: 365}).toISOString(),
 		}))
+		// Tri récent -> ancien par date de création
+		initial.sort((a, b) => (b.createdAt ?? '').localeCompare(a.createdAt ?? ''))
 		writeToStorage('users', initial)
 	}
 
@@ -415,14 +419,48 @@ export function useApi() {
 		const total = filtered.length
 		const totalPages = Math.max(1, Math.ceil(total / pageSize))
 		const start = (page - 1) * pageSize
-		const items = filtered.slice(start, start + pageSize)
+		// Tri explicite: le plus récent d'abord si createdAt présent
+		const sorted = [...filtered].sort((a, b) => {
+			const at = a.createdAt
+			const bt = b.createdAt
+			if (at && bt) return bt.localeCompare(at)
+			if (at && !bt) return -1
+			if (!at && bt) return 1
+			return 0
+		})
+		const items = sorted.slice(start, start + pageSize)
 		return {items, total, page, pageSize, totalPages}
 	}
 
-	async function createUser(payload: Omit<UserEntity, 'id'>): Promise<UserEntity> {
+	/**
+	 * Crée un utilisateur.
+	 * - `name` est nettoyé via trim() et requis (erreur si vide)
+	 * - `role` et `status` sont optionnels (défaut: 'Viewer' / 'active')
+	 */
+	async function createUser(
+		payload: { name: string, role?: UserEntity['role'], status?: UserEntity['status'] },
+	): Promise<UserEntity> {
 		const all = readFromStorage<UserEntity[]>('users') ?? []
-		const entity: UserEntity = {...payload, id: faker.string.uuid()}
-		writeToStorage('users', [entity, ...all])
+		const name = payload.name.trim()
+		if (name.length === 0) throw new Error('Name is required')
+		const entity: UserEntity = {
+			id: faker.string.uuid(),
+			name,
+			role: payload.role ?? 'Viewer',
+			status: payload.status ?? 'active',
+			createdAt: new Date().toISOString(),
+		}
+		const next = [entity, ...all]
+		// Tri récent -> ancien par date de création (rétrocompatible si anciens items sans createdAt)
+		next.sort((a, b) => {
+			const at = a.createdAt
+			const bt = b.createdAt
+			if (at && bt) return bt.localeCompare(at)
+			if (at && !bt) return -1
+			if (!at && bt) return 1
+			return 0
+		})
+		writeToStorage('users', next)
 		return entity
 	}
 
